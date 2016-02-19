@@ -1,5 +1,5 @@
 .DS_Store
 *.exe
-client_sample/client_sample
-server_sample/server_sample
+samples/client/client
+samples/server/server
 *.zip
