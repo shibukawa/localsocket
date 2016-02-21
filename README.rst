@@ -1,7 +1,7 @@
 LocalSocket
 =================
 
-This module provides a counter part of `QLocalServer <http://doc.qt.io/qt-5/qlocalserver.html>`_ and `QLocalSocket <http://doc.qt.io/qt-5/qlocalsocket.html>`_. It is designd for implementing core logic layer by Golang behind Qt GUI.
+This module provides a counter part of `QLocalServer <http://doc.qt.io/qt-5/qlocalserver.html>`_ and `QLocalSocket <http://doc.qt.io/qt-5/qlocalsocket.html>`_. It is designed for implementing core logic layer by Golang behind Qt GUI.
 
 As described in Qt's document, it uses Unix domain socket on POSIX systems and Named Pipe on Windows.
 
@@ -23,13 +23,13 @@ Usage
 
 * ``localsocket.NewLocalSocket(address string) (*LocalSocket, error)``
 
-  It connects via Unix Domain Socket at ``${TMP}/<address`` on POSIX, or Named Pipe at ``\\.\pipe\<address>`` on Windows .
+  It connects via Unix Domain Socket at ``${TMP}/<address>`` on POSIX, or Named Pipe at ``\\.\pipe\<address>`` on Windows .
 
 * ``localsocket.NewLocalServer(address string) *LocalServer``
 
   * ``Listen() error``
     
-    Creates Unix Domain Socket at ``${TMP}/<address`` on POSIX, or Named Pipe at ``\\.\pipe\<address>`` on Windows and start waiting client.
+    Creates Unix Domain Socket at ``${TMP}/<address>`` on POSIX, or Named Pipe at ``\\.\pipe\<address>`` on Windows and start waiting client.
 
   * ``ListenAndServe() error``
 
