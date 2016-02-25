@@ -16,12 +16,12 @@ var StoppedError = errors.New("Listener stopped")
 
 type LocalServer struct {
 	path     string
-	callback func(socket *LocalSocket)
+	callback func(socket net.Conn)
 	stop     chan int
 	wg       sync.WaitGroup
 }
 
-func (s *LocalServer) SetOnConnectionCallback(callback func(socket *LocalSocket)) {
+func (s *LocalServer) SetOnConnectionCallback(callback func(net.Conn)) {
 	s.callback = callback
 }
 

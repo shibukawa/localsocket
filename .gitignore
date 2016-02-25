@@ -2,4 +2,5 @@
 *.exe
 samples/client/client
 samples/server/server
+samples/qtapplication/localcomm.pro.user
 *.zip

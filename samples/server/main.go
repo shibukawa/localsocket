@@ -5,6 +5,7 @@ import (
 	"fmt"
 	"github.com/shibukawa/localsocket"
 	"math/rand"
+	"net"
 	"os"
 	"os/signal"
 	"strings"
@@ -14,7 +15,7 @@ import (
 
 func main() {
 	server := localsocket.NewLocalServer("testlocalsocket")
-	server.SetOnConnectionCallback(func(socket *localsocket.LocalSocket) {
+	server.SetOnConnectionCallback(func(socket net.Conn) {
 		defer socket.Close()
 		var wg sync.WaitGroup
 		wg.Add(2)
