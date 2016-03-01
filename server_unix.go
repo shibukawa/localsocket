@@ -30,8 +30,10 @@ func (s *LocalServer) Path() string {
 }
 
 func NewLocalServer(pathName string) *LocalServer {
+	path := filepath.Join(os.TempDir(), pathName)
+	os.Remove(path)
 	return &LocalServer{
-		path: filepath.Join(os.TempDir(), pathName),
+		path: path,
 	}
 }
 
